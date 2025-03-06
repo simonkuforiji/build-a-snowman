@@ -1,38 +1,123 @@
+:root {
+  --main-color: #353535;
+  --sub-color: #eef5f5;
+  --minor-color: #f6e0de;
+  --main-font-color: rgba(53, 53, 53, 0.5);
+  --white: #ffffff;
+}
+
+html {   /* from routes/Home */
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gilroy-Regular';
+
+  /* from routes/Home */
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  background: #f0f8ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin-top: 10px;
+  color: #007bff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.canvas {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  margin: 20px auto;
+  background: #f0f8ff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('./assets/images/snow-background.jpg');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.controls {
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+
+.add-icon {
+  cursor: pointer;
+}
+
+.acc-single {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  width: max-content;
+  position: absolute;
+}
+
+.acc-icon-stack {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  row-gap: 5px;
+  max-width: fit-content;
+
+  transition: opacity 0.2s ease; /* Smooth fade */
+  opacity: 1; /* Default visible state */
 }
 
-.App-link {
-  color: #61dafb;
+.hide-icon-stack {
+  visibility: hidden;
+  opacity: 0; /* Fade out instead of disappearing */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button  */
+.button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+  width: 155px;
 }
+
+.button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 6px 10px rgba(0, 123, 255, 0.4);
+}
+
+.button:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 3px rgba(0, 123, 255, 0.5);
+}
+ /* Button  */
