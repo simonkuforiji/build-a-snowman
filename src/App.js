@@ -202,7 +202,7 @@ const App = () => {
                 alt={acc.name + '-img'}
                 style={{
                   width: acc.size,
-                  height: 'fit-content'
+                  height: 'min-content'
                 }}
                 onClick={(e) => handleDisplayAccOptions(e, acc.id)}
                 onTouchStart={(e) => handleDisplayAccOptions(e, acc.id)} // For mobile
@@ -222,19 +222,3 @@ const App = () => {
 };
 
 export default App;
-
-// eslint-disable-next-line no-lone-blocks
-{/* <div
-  key={'snowball-' + ball.id}
-  style={{
-    width: ball.size,
-    height: ball.size,
-    background: 'white',
-    borderRadius: '50%',
-    position: 'absolute',
-    bottom: snowmanArr[index].y,
-    left: '50%',
-    transform: 'translateX(-50%)',
-    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.3)',
-  }}
-/> */}
