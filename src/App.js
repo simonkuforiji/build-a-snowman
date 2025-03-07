@@ -44,30 +44,30 @@ import background1 from './assets/images/background-1.jpg';
 import './App.css';
 
 const allAccessories = {
-  snowball1: { src: snowball1, name: 'snowball1', size: 50, x: 0, y: 0 },
-  snowball2: { src: snowball2, name: 'snowball2', size: 50, x: 0, y: 0 },
-  snowball3: { src: snowball3, name: 'snowball3', size: 50, x: 0, y: 0 },
-  snowball4: { src: snowball4, name: 'snowball4', size: 50, x: 0, y: 0 },
+  snowball1: { src: snowball1, name: 'snowball1', size: 100, x: 0, y: 0 },
+  snowball2: { src: snowball2, name: 'snowball2', size: 100, x: 0, y: 0 },
+  snowball3: { src: snowball3, name: 'snowball3', size: 100, x: 0, y: 0 },
+  snowball4: { src: snowball4, name: 'snowball4', size: 100, x: 0, y: 0 },
 
-  scarf1: {  src: scarf1, name: 'scarf1', size: 40, x: 0, y: 0 },
-  scarf2: {  src: scarf2, name: 'scarf2', size: 40, x: 0, y: 0 },
-  scarf3: {  src: scarf3, name: 'scarf3', size: 40, x: 0, y: 0 },
+  scarf1: {  src: scarf1, name: 'scarf1', size: 100, x: 0, y: 0 },
+  scarf2: {  src: scarf2, name: 'scarf2', size: 100, x: 0, y: 0 },
+  scarf3: {  src: scarf3, name: 'scarf3', size: 100, x: 0, y: 0 },
 
-  hat1: {  src: hat1, name: 'hat1', size: 40, x: 0, y: 0 },
-  hat2: {  src: hat2, name: 'hat2', size: 40, x: 0, y: 0 },
+  hat1: {  src: hat1, name: 'hat1', size: 100, x: 0, y: 0 },
+  hat2: {  src: hat2, name: 'hat2', size: 100, x: 0, y: 0 },
 
-  nose1: {  src: nose1, name: 'nose1', size: 40, x: 0, y: 0 },
+  nose1: {  src: nose1, name: 'nose1', size: 100, x: 0, y: 0 },
 
-  eyes1: {  src: eyes1, name: 'eyes1', size: 40, x: 0, y: 0 },
+  eyes1: {  src: eyes1, name: 'eyes1', size: 100, x: 0, y: 0 },
 
-  handsLeft1: {  src: handsLeft1, name: 'handsLeft1', size: 40, x: 0, y: 0 },
-  handsRight1: {  src: handsRight1, name: 'handsRight1', size: 40, x: 0, y: 0 },
+  handsLeft1: {  src: handsLeft1, name: 'handsLeft1', size: 100, x: 0, y: 0 },
+  handsRight1: {  src: handsRight1, name: 'handsRight1', size: 100, x: 0, y: 0 },
 
-  button1: {  src: button1, name: 'button1', size: 40, x: 0, y: 0 },
-  button2: {  src: button2, name: 'button2', size: 40, x: 0, y: 0 },
+  button1: {  src: button1, name: 'button1', size: 100, x: 0, y: 0 },
+  button2: {  src: button2, name: 'button2', size: 100, x: 0, y: 0 },
 
-  mouth1: {  src: mouth1, name: 'mouth1', size: 40, x: 0, y: 0 },
-  mouth2: {  src: mouth2, name: 'mouth2', size: 40, x: 0, y: 0 },
+  mouth1: {  src: mouth1, name: 'mouth1', size: 100, x: 0, y: 0 },
+  mouth2: {  src: mouth2, name: 'mouth2', size: 100, x: 0, y: 0 },
 }
 
 const App = () => {
@@ -177,21 +177,21 @@ const App = () => {
               <div className={`acc-icon-stack ${activeAcc === acc.id ? '' : 'hide-icon-stack'}`}  >
                 <CgZoomIn
                   className="add-icon" 
-                  size={15} 
+                  size={30} 
                   style={{ color: '#007bff' }} 
                   onClick={(e) => resizeAccessory(e, acc.id, sizefactor)} 
                   onTouchStart={(e) => resizeAccessory(e, acc.id, sizefactor)} 
                 />
                 <CgZoomOut
                   className="add-icon" 
-                  size={15} 
+                  size={30} 
                   style={ { color: '#007bff' }} 
                   onClick={(e) => resizeAccessory(e, acc.id, (sizefactor * -1))} 
                   onTouchStart={(e) => resizeAccessory(e, acc.id, (sizefactor * -1))}  
                 />
                 <CgCloseO 
                   className="add-icon" 
-                  size={13} 
+                  size={25} 
                   style={{ color: '#007bff' }} 
                   onClick={(e) => deleteAccessory(e, acc.id)} 
                   onTouchStart={(e) => deleteAccessory(e, acc.id)}
