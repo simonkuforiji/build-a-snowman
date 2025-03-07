@@ -2,21 +2,76 @@ import React, { useState, useRef, useCallback } from 'react';
 import Draggable from 'react-draggable';
 import { CgCloseO, CgZoomIn, CgZoomOut } from 'react-icons/cg';
 
-import scarf from './assets/images/scarf.svg';
-import scarfXmas from './assets/images/scarf-xmas.png';
-import snowballImg from './assets/images/snowball3.png';
+import { AccessoryBox } from './Components';
+
+// snowball
+import snowball1 from './assets/images/snowball-1.png';
+import snowball2 from './assets/images/snowball-2.png';
+import snowball3 from './assets/images/snowball-3.png';
+import snowball4 from './assets/images/snowball-4.png';
+
+// hat
+import hat1 from './assets/images/hat-1.png';
+import hat2 from './assets/images/hat-2.png';
+
+// scarf
+import scarf1 from './assets/images/scarf-1.png';
+import scarf2 from './assets/images/scarf-2.png';
+// svg
+import scarf3 from './assets/images/scarf-3.svg';
+
+// eyes
+import eyes1 from './assets/images/eyes-1.png';
+
+// nose
+import nose1 from './assets/images/nose-1.png';
+
+// mouth
+import mouth1 from './assets/images/mouth-1.png';
+import mouth2 from './assets/images/mouth-2.png';
+
+// buttons
+import button1 from './assets/images/button-1.png';
+import button2 from './assets/images/button-2.png';
+
+// hands
+import handsLeft1 from './assets/images/hands-left-1.png';
+import handsRight1 from './assets/images/hands-right-1.png';
+
+// background
+import background1 from './assets/images/background-1.jpg';
 
 import './App.css';
 
-// buttons, carrots, jackets, hats...
 const allAccessories = {
-  scarf: { name: 'scarf', x: 0, y: 0, src: scarf, size: 40 },
-  scarfXmas: { name: 'scarfXmas', x: 0, y: 0, src: scarfXmas, size: 40 }
+  snowball1: { src: snowball1, name: 'snowball1', size: 50, x: 0, y: 0 },
+  snowball2: { src: snowball2, name: 'snowball2', size: 50, x: 0, y: 0 },
+  snowball3: { src: snowball3, name: 'snowball3', size: 50, x: 0, y: 0 },
+  snowball4: { src: snowball4, name: 'snowball4', size: 50, x: 0, y: 0 },
+
+  scarf1: {  src: scarf1, name: 'scarf1', size: 40, x: 0, y: 0 },
+  scarf2: {  src: scarf2, name: 'scarf2', size: 40, x: 0, y: 0 },
+  scarf3: {  src: scarf3, name: 'scarf3', size: 40, x: 0, y: 0 },
+
+  hat1: {  src: hat1, name: 'hat1', size: 40, x: 0, y: 0 },
+  hat2: {  src: hat2, name: 'hat2', size: 40, x: 0, y: 0 },
+
+  nose1: {  src: nose1, name: 'nose1', size: 40, x: 0, y: 0 },
+
+  eyes1: {  src: eyes1, name: 'eyes1', size: 40, x: 0, y: 0 },
+
+  handsLeft1: {  src: handsLeft1, name: 'handsLeft1', size: 40, x: 0, y: 0 },
+  handsRight1: {  src: handsRight1, name: 'handsRight1', size: 40, x: 0, y: 0 },
+
+  button1: {  src: button1, name: 'button1', size: 40, x: 0, y: 0 },
+  button2: {  src: button2, name: 'button2', size: 40, x: 0, y: 0 },
+
+  mouth1: {  src: mouth1, name: 'mouth1', size: 40, x: 0, y: 0 },
+  mouth2: {  src: mouth2, name: 'mouth2', size: 40, x: 0, y: 0 },
 }
 
 const App = () => {
   const [snowman, setSnowman] = useState({
-    snowballs: [{ id: 1, size: 100, y: 0 }, { id: 2, size: 80, y: 0 }, { id: 3, size: 60, y: 0 }],
     accessories: [],
   });
   // eslint-disable-next-line no-unused-vars
@@ -36,16 +91,6 @@ const App = () => {
     draggableRefs.current[newId] = React.createRef();
   }, []);
 
-  const resizeSnowball = useCallback((id, delta) => {
-    setSnowman((prev) => ({
-      ...prev,
-      snowballs: prev.snowballs.map((ball) =>
-        ball.id === id ? { ...ball, size: Math.max(40, ball.size + delta) } : ball
-      ),
-    }));
-  }, []);
-
-  // Resize an accessory
   const resizeAccessory = useCallback((e, id, delta) => {
     e.stopPropagation();
     setSnowman((prev) => ({
@@ -110,27 +155,13 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="title">Build Your Snowman</h1>
-      <div className="canvas">
-        {snowman.snowballs.map((ball, index, snowmanArr) => {
-          snowmanArr[index].y = index > 0 ? snowmanArr[index - 1].y + (0.8 * snowmanArr[index - 1].size) : 0;;
-          return (
-            <img
-              src={snowballImg}
-              key={'snowball-' + ball.id}
-              alt="snowball"
-              style={{
-                width: ball.size,
-                height: ball.size,
-                position: 'absolute',
-                bottom: snowmanArr[index].y,
-                left: '50%',
-                transform: 'translateX(-50%)',
-              }}
-            />
-          )
-        })}
-
-        {snowman.accessories.map((acc, index) => (
+      <div
+        className="canvas"
+        style={{
+          backgroundImage: `url(${background1})`
+        }}
+      >
+        {snowman.accessories.map((acc) => (
           <Draggable
             nodeRef={draggableRefs.current[acc.id]}
             key={'accessory-' + acc.id}
@@ -139,7 +170,10 @@ const App = () => {
             onStop={() => {}}
             position={{ x: acc.x, y: acc.y }} // Controlled position
           >
-            <div ref={draggableRefs.current[acc.id]} className="acc-single">
+            <div
+              ref={draggableRefs.current[acc.id]}
+              className="acc-single"
+            >
               <div className={`acc-icon-stack ${activeAcc === acc.id ? '' : 'hide-icon-stack'}`}  >
                 <CgZoomIn
                   className="add-icon" 
@@ -168,6 +202,7 @@ const App = () => {
                 alt={acc.name + '-img'}
                 style={{
                   width: acc.size,
+                  height: 'fit-content'
                 }}
                 onClick={(e) => handleDisplayAccOptions(e, acc.id)}
                 onTouchStart={(e) => handleDisplayAccOptions(e, acc.id)} // For mobile
@@ -178,14 +213,8 @@ const App = () => {
       </div>
     
       <div className="controls">
-        {Object.keys(allAccessories).map((accessory) => (
-          <button className="button" onClick={() => addAccessory(allAccessories[accessory].name)}>Add {allAccessories[accessory].name}</button>
-        ))}
-        {snowman.snowballs.map((snowball) => (
-          <button className="button" key={`grow-${snowball.id}`} onClick={() => resizeSnowball(snowball.id, sizefactor)}>Ball {snowball.id} + {sizefactor}</button>
-        ))}
-        {snowman.snowballs.map((snowball) => (
-          <button className="button" key={`shrink-${snowball.id}`} onClick={() => resizeSnowball(snowball.id, (sizefactor * -1))}>Ball {snowball.id} - {sizefactor}</button>
+        {Object.keys(allAccessories).map((accessory, index) => (
+          <AccessoryBox backgroundImage={allAccessories[accessory].src} addAccessory={() => addAccessory(allAccessories[accessory].name)} keyzz={`${allAccessories[accessory].name}-${index}`} />
         ))}
       </div>
     </div>

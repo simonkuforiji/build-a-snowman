@@ -31,11 +31,11 @@ body {
 
 .App {
   text-align: center;
-  background: #f0f8ff;
+  /* background: #f0f8ff; */
 }
 
 .title {
-  margin-top: 10px;
+  margin-top: 20px;
   color: #007bff;
 }
 
@@ -45,11 +45,11 @@ body {
   max-width: 500px;
   height: 600px;
   margin: 20px auto;
-  background: #f0f8ff;
+  /* background: #f0f8ff; */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url('./assets/images/snow-background.jpg');
+  border-radius: 10px;
 }
 
 
@@ -60,7 +60,7 @@ body {
   flex-wrap: wrap;
   column-gap: 10px;
   row-gap: 10px;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding-bottom: 40px;
 }
 
@@ -74,6 +74,7 @@ body {
   column-gap: 5px;
   width: max-content;
   position: absolute;
+  transform: translateX(-50%),
 }
 
 .acc-icon-stack {
@@ -121,3 +122,29 @@ body {
   box-shadow: 0px 0px 0px 3px rgba(0, 123, 255, 0.5);
 }
  /* Button  */
+
+ .accessory-box {
+  width: 70px;
+  height: 70px;
+  /* border: 1px solid #007bff; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+ }
+
+ .accessory-box:hover {
+  /* background-color: #0056b3; */
+  transform: scale(1.3);
+  /* box-shadow: 0px 6px 10px rgba(0, 123, 255, 0.4); */
+}
+
+.accessory-box:active {
+  /* background-color: #004494; */
+  transform: scale(1.5);
+}
+
+.accessory-box:focus {
+  outline: none;
+  /* box-shadow: 0px 0px 0px 3px rgba(0, 123, 255, 0.5); */
+}
