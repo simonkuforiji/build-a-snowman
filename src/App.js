@@ -174,14 +174,17 @@ const addAccessory = useCallback((name) => {
                 <div className="accessory-actions">
                   <MdZoomIn 
                     onClick={(e) => resizeAccessory(e, acc.id, sizeFactor)}
+                    onTouchStart={(e) => resizeAccessory(e, acc.id, sizeFactor)}
                     title="Enlarge"
                   />
                   <MdZoomOut 
                     onClick={(e) => resizeAccessory(e, acc.id, -sizeFactor)}
+                    onTouchStart={(e) => resizeAccessory(e, acc.id, -sizeFactor)}
                     title="Shrink"
                   />
                   <MdDelete 
                     onClick={(e) => deleteAccessory(e, acc.id)}
+                    onTouchStart={(e) => deleteAccessory(e, acc.id)}
                     title="Remove"
                   />
                 </div>
