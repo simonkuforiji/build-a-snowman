@@ -46,6 +46,7 @@ import handsRight1 from './assets/images/hands-right-1.png';
 
 // background
 import background1 from './assets/images/background-1.jpg';
+import background2 from './assets/images/background-2.jpg';
 
 const allAccessories = {
   snowball1: { src: snowball1, name: 'snowball1', size: 100, x: 10, y: 40 },
@@ -154,7 +155,7 @@ const addAccessory = useCallback((name) => {
 
       <div 
         className="snowman-canvas"
-        style={{ backgroundImage: `url(${background1})` }}
+        style={{ backgroundImage: `url(${background2})` }}
       >
         {snowman.accessories.map((acc) => (
           <Draggable
