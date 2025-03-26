@@ -11,4 +11,4 @@ In the project directory, run the comand below to install all dependencies:
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Here's a screen
-<img width="1512" alt="UI-Pic" src="https://github.com/user-attachments/assets/c96643c6-251f-469e-bef1-58544fb8d559" />
+<img width="907" alt="Screenshot 2025-03-26 at 4 26 35 PM" src="https://github.com/user-attachments/assets/ce2762cb-55ad-4bf5-a4c4-f993a581d45b" />
