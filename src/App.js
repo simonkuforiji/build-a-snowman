@@ -45,6 +45,7 @@ import handsLeft1 from './assets/images/hands-left-1.png';
 import handsRight1 from './assets/images/hands-right-1.png';
 
 // background
+// eslint-disable-next-line no-unused-vars
 import background1 from './assets/images/background-1.jpg';
 import background2 from './assets/images/background-2.jpg';
 
